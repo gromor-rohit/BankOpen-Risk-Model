@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankOpen Risk Model</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #343a40;
+        }
+        img {
+            width: 300px;
+            height: 100px;
+            object-fit: fill;
+            margin-bottom: 50px;
+        }
+        .application-form, .login-form {
+            margin-top: 50px;
+        }
+        .form-input {
+            width: 400px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #daced9;
+            border-radius: 4px;
+        }
+        .form-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: #ffffff;
+            cursor: pointer;
+        }
+        .form-button:hover {
+            background-color: #0056b3;
+        }
+        .icons {
+            margin: 20px 0;
+        }
+        .icons img {
+            width: 100px;
+            height: 50px;
+            margin: 0 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BankOpen Risk Model</h1>
+        <img src="https://meta.gromor.in/images/logo.png" alt="BankOpen Logo">
+        <div class="login-form" id="login-form">
+            <input type="text" class="form-input" id="userid" placeholder="User ID" required>
+            <input type="password" class="form-input" id="password" placeholder="Password" required>
+            <button class="form-button" onclick="login()">Login</button>
+        </div>
+        <div class="application-form" id="application-form" style="display: none;">
+            <form action="/submit_application" method="post">
+                <input type="text" name="application" class="form-input" placeholder="Enter application ID(s)" required>
+                <input type="submit" class="form-button" value="Submit">
+            </form>
+            <div class="icons">
+                <img src="path/to/credit-policy-icon.png" alt="Show Credit Policy" onclick="showCreditPolicy()">
+                <img src="path/to/help-icon.png" alt="Help" onclick="showHelp()">
+                <img src="path/to/screenshot-icon.png" alt="Screenshot" onclick="takeScreenshot()">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            var userid = document.getElementById('userid').value;
+            var password = document.getElementById('password').value;
+            if (userid === 'rohit.rai@gromor.in' && password === 'Rohit@123') {
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('application-form').style.display = 'block';
+            } else {
+                alert('Invalid login credentials');
+            }
+        }
+
+        function showCreditPolicy() {
+            alert('Showing credit policy...');
+            // Implement the functionality to show credit policy
+        }
+
+        function showHelp() {
+            alert('Help section...');
+            // Implement the functionality to show help
+        }
+
+        function takeScreenshot() {
+            alert('Taking screenshot...');
+            // Implement the functionality to take a screenshot
+        }
+    </script>
+</body>
+</html>
